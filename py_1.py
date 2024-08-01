@@ -13,9 +13,11 @@ def create(name,age,city):
     # print(db_insert,'Successful')
     db_insert=collection.insert_one({'name':name,'age':age,'city':city})
     print(db_insert,'Successful')
-
+def get(q):
+    db_get=collection.find_one(q)
+    print(db_get,'Successful')
 
 def main():
     create('Jio',21,'Rourkela')
-
+    get({'name':'Jio'})
 main()
