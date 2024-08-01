@@ -16,8 +16,11 @@ def create(name,age,city):
 def get(q):
     db_get=collection.find_one(q)
     print(db_get,'Successful')
-
+def update(q,n_q):
+    db_update=collection.update_one(q,{'$set':n_q})
+    print(db_update,'Successful')
 def main():
     create('Jio',21,'Rourkela')
     get({'name':'Jio'})
+    update({'name':'Jio'},{'name':'Lulla'})
 main()
