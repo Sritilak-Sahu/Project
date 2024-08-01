@@ -19,6 +19,9 @@ def get(q):
 def update(q,n_q):
     db_update=collection.update_one(q,{'$set':n_q})
     print(db_update,'Successful')
+def delete(q):
+    db_delete=collection.delete_one(q)
+    print(db_delete,'Successful')
 def main():
     create('Jio',21,'Rourkela')
     get({'name':'Jio'})
